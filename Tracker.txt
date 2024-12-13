@@ -1,0 +1,92 @@
+2 Branches:
+    main
+    *Matrix-1D-to-2D 
+
+Can be easily check by using the following cmd git branch
+Instruction for push.
+
+    git add .
+    git commit -m "insert_message"
+    git push origin main
+
+
+<SYSTEM OF SPAGHETY CODE>
+Main.cpp
+    - Primary.hpp/.cpp
+        #define
+            #define screenWidth 800 // ScreenWidth.
+            #define screenHeight 600 // ScreenHeight.
+            #define number_size 25 // Number font size.
+            #define font_size 20 // Font size.
+
+            #define MAX_DIGITS 4 // Max number that can be entered into a matrix box.
+
+            #define roundness 0.5 // roundness of a rect.
+            #define segments 6 // Segemnts of a curve.
+
+            extern Color TRANSPARENT_BEIGE;
+
+    - MatrixArray.hpp/.cpp
+        #define
+
+        class ArrayDeclaration
+            void registering_number();
+            void designating_box(); 
+            void clear();
+            void draws();
+        extern ArrayDeclaration matrix, box[3][3];
+        
+        class MatrixSize
+            void mode(); // Switch between 2x2 and 3x3
+
+        extern MatrixSize is_three_by_three;
+
+    - UserInterface.hpp/.cpp 
+        #define
+
+        class Uis
+            void uis_default()();
+
+    - Determinant.hpp/.cpp 
+        #define
+
+        class Determinant
+            void determinant_logic();
+
+        class Result
+            void designating_output_box_and_draw(); // Defining output box and drawing it.
+        extern Result::determinant_result output_box_value;
+    
+
+    - ModeSelection.hpp/.cpp 
+        #define
+
+        class State
+            void co_factor();
+            void determinant_logic();
+            void back();
+
+
+Checklist: ( < x > done; < o > undone )
+< x > Make a main header where Identifiers.hpp; UserInterface.hpp; Calculations.hpp source from for standart like screenHeight, screenWidth, number_size, font_size, 
+
+< x > Finish making logic for 2x2 and 3x3 determinant.
+
+< x > Your UI should generate visual arrays of empty slots corresponding to the size of an inputted matrix. 
+
+< x > The calculated matrix also needs to be visualized in arrays of slots, each of which represents one matrix entry.
+
+< x > Can perform complicated calculations by facilitating parentheses for term grouping, e.g. (A + B)*C + (D - E)*F.
+
+< x > (Priority) Can find the co_factor of an invertible matrix.
+    
+    < x > Cofactor. (Can only run for 3x3 matrixes)
+
+< x > (Priority) Add a clear button for the matrix.
+
+< o > Can solve a linear system.
+    < x > Finish the calculation (Checked)
+    < o > Perform the matrix and solution UI (Already have the button but cannot click, also the code still run on the console)
+< o > Inverse
+    < x > Calculate the inverse
+    < o > Draw the inverse
